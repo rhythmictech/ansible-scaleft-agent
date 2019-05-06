@@ -1,0 +1,16 @@
+---
+- name: ScaleFT apt key is trusted
+  apt_key:
+    url: https://dist.scaleft.com/pki/scaleft_deb_key.asc
+    state: present
+
+- name: ScaleFT apt repo is installed
+  apt_repository:
+    repo: deb http://pkg.scaleft.com/deb linux main
+    state: present
+
+- name: ScaleFT Server Agent is installed
+  apt:
+    name:
+    - scaleft-server-tools
+    state: latest
