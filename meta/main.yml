@@ -20,18 +20,17 @@ galaxy_info:
   - name: EL
     versions:
     - all
-  
 
   galaxy_tags:
-  - Ubuntu
-  - Debian
-  - EL
-  - Amazon
-  - RHEL
-  - Okta
-  - ScaleFT
-  - Auth
-  - System
-  - Security
+  - ubuntu
+  - debian
+  - el
+  - amazon
+  - rhel
+  - okta
+  - scaleft
+  - auth
+  - system
+  - security
 
 dependencies: []

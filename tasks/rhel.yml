@@ -10,4 +10,4 @@
   yum:
     name:
     - scaleft-server-tools
-    state: latest
+    state: present
