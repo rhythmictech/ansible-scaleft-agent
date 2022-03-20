@@ -1,4 +1,33 @@
 ---
+- name: create scaleft directories
+  file:
+    path: "{{ item }}"
+    owner: root
+    group: root
+    mode: 0750
+    state: directory
+  with_items:
+    - '/etc/sft'
+    - '/var/lib/sftd'
+  register: config_dirs
+
+- name: place enrollment token
+  copy:
+    content: "{{ scaleft_enrollment_token }}"
+    dest: /var/lib/sftd/enrollment.token
+    owner: root
+    group: root
+    mode: 0600
+  when: scaleft_enrollment_token is defined and scaleft_enrollment_token != ""
+
+- name: place scaleft configuration file
+  template:
+    src: etc.sft.sftd.yaml.j2
+    dest: /etc/sft/sftd.yaml
+    owner: root
+    group: root
+    mode: 0600
+
 - include_tasks: debian.yml
   when: ansible_os_family == 'Debian'
 - include_tasks: rhel.yml

@@ -1,0 +1,6 @@
+# Enrollment token to place
+scaleft_enrollment_token: ""
+
+# A Key:Value dict of sftd.yaml configuration directives. For deatils, see:
+# https://help.okta.com/asa/en-us/Content/Topics/Adv_Server_Access/docs/sftd-configure.htm
+scaleft_config_options: {}

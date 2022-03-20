@@ -1,0 +1,5 @@
+---
+# {{ ansible_managed }}
+{% for k,v in scaleft_config_options.iteritems() %}
+{{ k }}: {{ v }}
+{% endfor %}
